@@ -1,0 +1,13 @@
+{
+  "itemGroup.legomod": "Example Mod Tab",
+  "block.legomod.example_block": "Example Block",
+  "item.legomod.example_item": "Example Item",
+
+  "legomod.configuration.title": "Lego Mod Configs",
+  "legomod.configuration.section.legomod.common.toml": "Lego Mod Configs",
+  "legomod.configuration.section.legomod.common.toml.title": "Lego Mod Configs",
+  "legomod.configuration.items": "Item List",
+  "legomod.configuration.logDirtBlock": "Log Dirt Block",
+  "legomod.configuration.magicNumberIntroduction": "Magic Number Text",
+  "legomod.configuration.magicNumber": "Magic Number"
+}
