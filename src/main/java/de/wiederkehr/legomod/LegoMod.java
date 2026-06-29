@@ -58,6 +58,9 @@ public class LegoMod {
 
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.AZURITE_BLOCK);
+            event.accept(ModBlocks.RAW_AZURITE_BLOCK);
+            event.accept(ModBlocks.AZURITE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_AZURITE_ORE);
         }
 
     }
