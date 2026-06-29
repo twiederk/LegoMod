@@ -1,6 +1,7 @@
 package de.wiederkehr.legomod;
 
 import com.mojang.logging.LogUtils;
+import de.wiederkehr.legomod.creativemodtab.ModCreativeModeTabs;
 import de.wiederkehr.legomod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
@@ -28,6 +29,8 @@ public class LegoMod {
     public LegoMod(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
 
