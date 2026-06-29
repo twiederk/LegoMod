@@ -39,7 +39,7 @@ public class ModBlocks {
                     .sound(SoundType.STONE)
             ));
 
-    public static final DeferredBlock<Block> DEEPSLATE_AZURITE_ORE = registerBlock("deepslate_azurite_ore",
+    public static final DeferredBlock<Block> AZURITE_DEEPSLATE_ORE = registerBlock("azurite_deepslate_ore",
             properties -> new DropExperienceBlock(UniformInt.of(2, 4), properties
                     .strength(5f)
                     .requiresCorrectToolForDrops()

@@ -37,6 +37,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.legomod.azurite_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.AZURITE_BLOCK);
+                        output.accept(ModBlocks.RAW_AZURITE_BLOCK);
+                        output.accept(ModBlocks.AZURITE_ORE);
+                        output.accept(ModBlocks.AZURITE_DEEPSLATE_ORE);
                     })
                     .build());
 
