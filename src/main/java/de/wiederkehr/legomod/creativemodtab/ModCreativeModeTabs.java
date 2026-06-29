@@ -26,6 +26,16 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+    public static final Supplier<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",
+            () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModItems.RAW_AZURITE.get()))
+                    .title(Component.translatable("creativetab.legomod.azurite_blocks"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.AZURITE.get());
+                        output.accept(ModItems.RAW_AZURITE.get());
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
