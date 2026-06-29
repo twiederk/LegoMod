@@ -1,6 +1,7 @@
 package de.wiederkehr.legomod.creativemodtab;
 
 import de.wiederkehr.legomod.LegoMod;
+import de.wiederkehr.legomod.block.ModBlocks;
 import de.wiederkehr.legomod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -25,16 +26,17 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(CreativeModeTabs.INGREDIENTS)
                     .withTabsAfter(Identifier.fromNamespaceAndPath(LegoMod.MOD_ID, "azurite_blocks_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.AZURITE.get());
-                        output.accept(ModItems.RAW_AZURITE.get());
+                        output.accept(ModItems.AZURITE);
+                        output.accept(ModItems.RAW_AZURITE);
                     })
                     .build());
 
     public static final Supplier<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.RAW_AZURITE.get()))
+                    .icon(() -> new ItemStack(ModBlocks.AZURITE_BLOCK.get()))
                     .title(Component.translatable("creativetab.legomod.azurite_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.AZURITE_BLOCK);
                     })
                     .build());
 
