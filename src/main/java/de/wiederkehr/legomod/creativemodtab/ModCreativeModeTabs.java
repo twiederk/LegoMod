@@ -4,7 +4,9 @@ import de.wiederkehr.legomod.LegoMod;
 import de.wiederkehr.legomod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -20,6 +22,8 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModItems.AZURITE.get()))
                     .title(Component.translatable("creativetab.legomod.azurite_items"))
+                    .withTabsBefore(CreativeModeTabs.INGREDIENTS)
+                    .withTabsAfter(Identifier.fromNamespaceAndPath(LegoMod.MOD_ID, "azurite_blocks_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.AZURITE.get());
                         output.accept(ModItems.RAW_AZURITE.get());
