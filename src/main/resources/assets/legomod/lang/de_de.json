@@ -1,6 +1,8 @@
 {
   "item.legomod.azurite": "Azurit",
   "item.legomod.raw_azurite": "Roh Azurit",
+  "block.legomod.azurite_block": "Azurit Block",
+
   "creativetab.legomod.azurite_items": "LegoMod Gegenstände",
   "creativetab.legomod.azurite_blocks": "LegoMod Blocks"
 }
