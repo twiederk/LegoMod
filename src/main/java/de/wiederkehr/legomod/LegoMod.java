@@ -61,6 +61,8 @@ public class LegoMod {
             event.accept(ModBlocks.RAW_AZURITE_BLOCK);
             event.accept(ModBlocks.AZURITE_ORE);
             event.accept(ModBlocks.AZURITE_DEEPSLATE_ORE);
+            event.accept(ModBlocks.AZURITE_NEITHER_ORE);
+            event.accept(ModBlocks.AZURITE_END_ORE);
         }
 
     }

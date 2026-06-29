@@ -46,6 +46,20 @@ public class ModBlocks {
                     .sound(SoundType.DEEPSLATE)
             ));
 
+    public static final DeferredBlock<Block> AZURITE_NEITHER_ORE = registerBlock("azurite_neither_ore",
+            properties -> new DropExperienceBlock(UniformInt.of(2, 4), properties
+                    .strength(5f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.DEEPSLATE)
+            ));
+
+    public static final DeferredBlock<Block> AZURITE_END_ORE = registerBlock("azurite_end_ore",
+            properties -> new DropExperienceBlock(UniformInt.of(2, 4), properties
+                    .strength(5f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.DEEPSLATE)
+            ));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);
         registerBlockItem(name, toReturn);
