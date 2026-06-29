@@ -1,6 +1,7 @@
 package de.wiederkehr.legomod;
 
 import com.mojang.logging.LogUtils;
+import de.wiederkehr.legomod.block.ModBlocks;
 import de.wiederkehr.legomod.creativemodtab.ModCreativeModeTabs;
 import de.wiederkehr.legomod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -33,6 +34,7 @@ public class LegoMod {
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
