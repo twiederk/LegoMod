@@ -35,8 +35,6 @@ public class ModCreativeModeTabs {
                     .icon(() -> new ItemStack(ModItems.RAW_AZURITE.get()))
                     .title(Component.translatable("creativetab.legomod.azurite_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.AZURITE.get());
-                        output.accept(ModItems.RAW_AZURITE.get());
                     })
                     .build());
 
