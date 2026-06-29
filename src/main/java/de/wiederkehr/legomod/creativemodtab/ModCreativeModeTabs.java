@@ -40,7 +40,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RAW_AZURITE_BLOCK);
                         output.accept(ModBlocks.AZURITE_ORE);
                         output.accept(ModBlocks.AZURITE_DEEPSLATE_ORE);
-                        output.accept(ModBlocks.AZURITE_NEITHER_ORE);
+                        output.accept(ModBlocks.AZURITE_NETHER_ORE);
                         output.accept(ModBlocks.AZURITE_END_ORE);
                     })
                     .build());

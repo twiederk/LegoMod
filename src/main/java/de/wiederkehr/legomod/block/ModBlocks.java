@@ -46,7 +46,7 @@ public class ModBlocks {
                     .sound(SoundType.DEEPSLATE)
             ));
 
-    public static final DeferredBlock<Block> AZURITE_NEITHER_ORE = registerBlock("azurite_neither_ore",
+    public static final DeferredBlock<Block> AZURITE_NETHER_ORE = registerBlock("azurite_nether_ore",
             properties -> new DropExperienceBlock(UniformInt.of(2, 4), properties
                     .strength(5f)
                     .requiresCorrectToolForDrops()

@@ -26,7 +26,7 @@ public class ModModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ModBlocks.RAW_AZURITE_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.AZURITE_ORE.get());
         blockModels.createTrivialCube(ModBlocks.AZURITE_DEEPSLATE_ORE.get());
-        blockModels.createTrivialCube(ModBlocks.AZURITE_NEITHER_ORE.get());
+        blockModels.createTrivialCube(ModBlocks.AZURITE_NETHER_ORE.get());
         blockModels.createTrivialCube(ModBlocks.AZURITE_END_ORE.get());
     }
 
