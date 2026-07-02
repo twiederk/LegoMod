@@ -1,5 +1,6 @@
 package de.wiederkehr.legomod;
 
+import de.wiederkehr.legomod.datagen.ModBlockTagsProvider;
 import de.wiederkehr.legomod.datagen.ModModelProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -14,7 +15,9 @@ public class LegoModeDataGen {
     public static void gatherClientData(GatherDataEvent.Client event) {
         DataGenerator generator = event.getGenerator();
         PackOutput packOutput = generator.getPackOutput();
+        var lookupProvider = event.getLookupProvider();
 
         generator.addProvider(true, new ModModelProvider(packOutput));
+        generator.addProvider(true, new ModBlockTagsProvider(packOutput, lookupProvider));
     }
 }
