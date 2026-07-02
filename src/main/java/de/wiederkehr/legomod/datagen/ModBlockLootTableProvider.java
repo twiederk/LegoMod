@@ -28,7 +28,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.AZURITE_BLOCK.get());
-        // dropSelf(ModBlocks.RAW_AZURITE_BLOCK.get());
+        dropSelf(ModBlocks.RAW_AZURITE_BLOCK.get());
 
         add(ModBlocks.AZURITE_ORE.get(),
                 createOreDrop(ModBlocks.AZURITE_ORE.get(), ModItems.RAW_AZURITE.get()));

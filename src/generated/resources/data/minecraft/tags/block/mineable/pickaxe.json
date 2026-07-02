@@ -1,0 +1,10 @@
+{
+  "values": [
+    "legomod:azurite_block",
+    "legomod:raw_azurite_block",
+    "legomod:azurite_ore",
+    "legomod:azurite_deepslate_ore",
+    "legomod:azurite_nether_ore",
+    "legomod:azurite_end_ore"
+  ]
+}
