@@ -69,6 +69,15 @@ public class ModRecipeProvider extends RecipeProvider {
 
         oreSmelting(AZURITE_SMELTABLE, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.AZURITE.get(), 0.25f, 200, "azurite");
         oreBlasting(AZURITE_SMELTABLE, RecipeCategory.MISC, CookingBookCategory.MISC, ModItems.AZURITE.get(), 0.25f, 100, "azurite");
+
+        // Mohn-Blume zu Enderperlen Rezept
+        shaped(RecipeCategory.MISC, Items.ENDER_PEARL)
+                .pattern(" B ")
+                .pattern("B B")
+                .pattern(" B ")
+                .define('B', Items.POPPY)
+                .unlockedBy(getHasName(Items.POPPY), has(Items.POPPY))
+                .save(output, "legomod:ender_pearl");
     }
 
 
