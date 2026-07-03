@@ -3,6 +3,7 @@ package de.wiederkehr.legomod;
 import de.wiederkehr.legomod.datagen.ModBlockLootTableProvider;
 import de.wiederkehr.legomod.datagen.ModBlockTagsProvider;
 import de.wiederkehr.legomod.datagen.ModModelProvider;
+import de.wiederkehr.legomod.datagen.ModRecipeProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
@@ -27,5 +28,6 @@ public class LegoModDataGen {
         generator.addProvider(true, new ModBlockTagsProvider(packOutput, lookupProvider));
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+        generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
     }
 }
