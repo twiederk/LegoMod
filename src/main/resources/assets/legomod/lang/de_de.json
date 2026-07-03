@@ -1,4 +1,14 @@
 {
   "item.legomod.azurite": "Azurit",
-  "item.legomod.raw_azurite": "Roh Azurit"
+  "item.legomod.raw_azurite": "Roh Azurit",
+
+  "block.legomod.azurite_block": "Azurit Block",
+  "block.legomod.raw_azurite_block": "Azurit Roh Block",
+  "block.legomod.azurite_ore": "Azurit Erz",
+  "block.legomod.azurite_deepslate_ore": "Azurit Deepslate Erz",
+  "block.legomod.azurite_nether_ore": "Azurit Nether Erz",
+  "block.legomod.azurite_end_ore": "Azurit End Erz",
+
+  "creativetab.legomod.azurite_items": "LegoMod Gegenstände",
+  "creativetab.legomod.azurite_blocks": "LegoMod Blocks"
 }

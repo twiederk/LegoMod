@@ -1,6 +1,8 @@
 package de.wiederkehr.legomod;
 
 import com.mojang.logging.LogUtils;
+import de.wiederkehr.legomod.block.ModBlocks;
+import de.wiederkehr.legomod.creativemodtab.ModCreativeModeTabs;
 import de.wiederkehr.legomod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
@@ -29,7 +31,10 @@ public class LegoMod {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        ModCreativeModeTabs.register(modEventBus);
+
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -50,6 +55,16 @@ public class LegoMod {
             event.accept(ModItems.AZURITE);
             event.accept(ModItems.RAW_AZURITE);
         }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.AZURITE_BLOCK);
+            event.accept(ModBlocks.RAW_AZURITE_BLOCK);
+            event.accept(ModBlocks.AZURITE_ORE);
+            event.accept(ModBlocks.AZURITE_DEEPSLATE_ORE);
+            event.accept(ModBlocks.AZURITE_NETHER_ORE);
+            event.accept(ModBlocks.AZURITE_END_ORE);
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
