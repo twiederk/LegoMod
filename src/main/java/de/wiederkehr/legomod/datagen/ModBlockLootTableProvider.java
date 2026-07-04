@@ -11,10 +11,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
@@ -38,7 +40,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 createMultipleOreDrops(ModBlocks.AZURITE_NETHER_ORE.get(), ModItems.RAW_AZURITE.get(), 4, 7));
         add(ModBlocks.AZURITE_END_ORE.get(),
                 createMultipleOreDrops(ModBlocks.AZURITE_END_ORE.get(), ModItems.RAW_AZURITE.get(), 5, 9));
-
+        add(ModBlocks.PURPLE_FLOWER.get(),
+                createSimpleDrops(ModBlocks.PURPLE_FLOWER.get(), ModItems.PURPLE_PETALS.get(), 3));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block block, Item item, float min_drops, float max_drops) {
@@ -51,6 +54,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         );
     }
 
+    protected LootTable.Builder createSimpleDrops(Block block, Item item, int count) {
+        return LootTable.lootTable()
+                .withPool(applyExplosionDecay(block,
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1))
+                                .add(LootItem.lootTableItem(item)
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(count)))
+                                )
+                ));
+    }
 
     @Override
     protected Iterable<Block> getKnownBlocks() {

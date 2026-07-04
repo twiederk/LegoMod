@@ -11,6 +11,7 @@ public class ModItems {
 
     public static final DeferredItem<Item> AZURITE = ITEMS.registerSimpleItem("azurite");
     public static final DeferredItem<Item> RAW_AZURITE = ITEMS.registerSimpleItem("raw_azurite");
+    public static final DeferredItem<Item> PURPLE_PETALS = ITEMS.registerSimpleItem("purple_petals");
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
