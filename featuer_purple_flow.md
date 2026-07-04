@@ -23,20 +23,20 @@ droppen.
 
 - Datei: `src/main/java/de/wiederkehr/legomod/block/ModBlocks.java`
 - Neuen Block mit vorhandenem Registry-Pattern (`registerBlock(...)`) registrieren.
-- Blocktyp: `FlowerBlock` oder `BushBlock` (abhängig vom gewunschten Effekt).
+- Blocktyp: `BushBlock` (rein dekorativ, ohne Vanilla-Effekte)
 - Eigenschaften:
     - `noCollission()`
     - `instabreak()`
     - `sound(SoundType.GRASS)`
-    - `offsetType(BlockBehaviour.OffsetType.XZ)` fur pflanzentypisches Rendering
+  - `offsetType(BlockBehaviour.OffsetType.XZ)` für pflanzentypisches Rendering
 
 ### 3) LootTable so anpassen, dass 3 Blutenblatter droppen
 
 - Datei: `src/main/java/de/wiederkehr/legomod/datagen/ModBlockLootTableProvider.java`
-- Fur `purple_flower` einen Drop-Eintrag erzeugen:
-    - Standard: immer `3x ModItems.PURPLE_PETALS`
-    - Optional (zu klaren): Verhalten bei Silk Touch / Schere
-- Ergebnis: Beim Ernten der Blume werden 3 Blutenblatter gespawnt.
+- Für `purple_flower` einen Drop-Eintrag erzeugen:
+  - **Immer**: `3x ModItems.PURPLE_PETALS` (auch bei Silk Touch/Schere)
+  - Die Blume selbst wird nicht gedroppt
+- Ergebnis: Beim Ernten (egal mit welchem Werkzeug) werden immer genau 3 Blütenblätter gespawnt.
 
 ### 4) DataGen: Blockstates und Models erweitern
 
@@ -67,25 +67,37 @@ droppen.
 - Datei: `src/main/java/de/wiederkehr/legomod/creativemodtab/ModCreativeModeTabs.java`
 - `purple_flower` und `purple_petals` im passenden Tab anzeigen.
 
-### 8) DataGen und Build validieren
+### 8) World Generation implementieren
 
-- DataGen ausfuhren und generierte Ressourcen prufen.
+- Dateien:
+  - `src/main/java/de/wiederkehr/legomod/worldgen/feature/...`
+  - `src/main/resources/data/legomod/worldgen/configured_feature/...`
+  - `src/main/resources/data/legomod/worldgen/placed_feature/...`
+- Neue Configured- und PlacedFeature für `purple_flower` erzeugen.
+- Platzierung: Im Biome-Tags oder spezifischen Biomes definieren.
+- Spawn-Bedingungen: z. B. auf Gras/Erde in gemäßigten Biomen.
+
+### 9) DataGen und Build validieren
+
+- DataGen ausführen und generierte Ressourcen prüfen.
 - Kompilierung + Client-Start testen:
     - Block platzierbar
-    - richtige Darstellung
-    - beim Ernten exakt 3 Blutenblatter
+  - Richtige Darstellung
+  - Beim Ernten exakt 3 Blütenblätter
+  - Blume spawnt natürlich in der Welt
 
 ## Test-Checkliste
 
 - [ ] `purple_flower` ist im Creative Tab sichtbar.
 - [ ] Blockstate/Model/Texture werden korrekt geladen.
-- [ ] Beim normalen Abbau droppen genau `3x purple_petals`.
-- [ ] Verhalten mit Silk Touch/Schere ist wie gewunscht.
+- [ ] Beim Abbau droppen genau `3x purple_petals` (auch mit Schere/Silk Touch).
+- [ ] Die Blume wird nicht selbst gedroppt.
+- [ ] `purple_flower` spawnt natürlich in der Welt (WorldGen funktioniert).
 - [ ] Lokalisierung in EN/DE funktioniert.
 
-## Offene Fragen
+## Klärung der offenen Fragen
 
-1. Soll bei Silk Touch/Schere die Blume selbst droppen oder weiterhin `3x purple_petals`?
-2. Soll die Blume einen Vanilla-Effekt haben (wie `FlowerBlock` mit MobEffect), oder rein dekorativ sein (`BushBlock`)?
-3. Soll die Blume naturlich in der Welt spawnen (WorldGen), oder nur per Creative/Commands verfugbar sein?
+1. ✅ **Bei Schere/Silk Touch:** Weiterhin `3x purple_petals` droppen (nicht die Blume selbst)
+2. ✅ **Blocktyp:** Rein dekorativ mit `BushBlock` (ohne Vanilla-Effekte)
+3. ✅ **World Generation:** Blume soll natürlich in der Welt spawnen (WorldGen implementieren)
 
