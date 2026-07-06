@@ -1,7 +1,12 @@
 package de.wiederkehr.legomod.item.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -35,18 +40,34 @@ public class MetalDetectorItem extends Item {
                     foundBlock = true;
 
                     // damage the item
+                    context.getItemInHand().hurtAndBreak(1, player, context.getHand());
+
                     // play sound
+                    level.playSound(null, positionClicked, SoundEvents.AMETHYST_BLOCK_CHIME,
+                            SoundSource.BLOCKS, 1.5f, 1f);
+
                     // spawn particles
+                    spawnFoundParticles(level, positionClicked, blockState);
 
                     break;
                 }
 
-                if (!foundBlock) {
-                    outputNoValuablesFound(player);
-                }
+            }
+
+            if (!foundBlock) {
+                outputNoValuablesFound(player);
             }
         }
         return InteractionResult.SUCCESS;
+    }
+
+    private void spawnFoundParticles(Level level, BlockPos positionClicked, BlockState blockState) {
+        for (int i = 0; i < 20; i++) {
+            ServerLevel serverLevel = (ServerLevel) level;
+            serverLevel.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, blockState),
+                    positionClicked.getX() + 0.5d, positionClicked.getY() + 1.0d, positionClicked.getZ() + 0.5d, 1,
+                    Math.cos(i * 18) * 0.15d, 0.15d, Math.sin(i * 18) * 0.15d, 0.2);
+        }
     }
 
     private void outputNoValuablesFound(Player player) {
