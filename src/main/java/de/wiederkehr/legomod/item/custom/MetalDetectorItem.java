@@ -1,6 +1,7 @@
 package de.wiederkehr.legomod.item.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -49,11 +50,13 @@ public class MetalDetectorItem extends Item {
     }
 
     private void outputNoValuablesFound(Player player) {
-
+        player.sendSystemMessage(Component.translatable("item.legomod.metal_detector.no_valuables"));
     }
 
-    private void outputValuableCoordinates(BlockPos below, Player player, Block block) {
-
+    private void outputValuableCoordinates(BlockPos position, Player player, Block block) {
+        player.sendSystemMessage(Component.literal("Wertvolles gefunden: ")
+                .append(block.getName())
+                .append(Component.literal(" bei (" + position.getX() + "," + position.getY() + "," + position.getZ() + ")")));
     }
 
     private boolean isValuableBlock(BlockState blockState) {
