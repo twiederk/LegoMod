@@ -1,7 +1,11 @@
 {
   "item.legomod.azurite": "Azurit",
   "item.legomod.raw_azurite": "Raw Azurit",
+  "item.legomod.purple_petals": "Ender Lilies Leaves",
+  "item.legomod.metal_detector": "Metal Detector",
+  "item.legomod.metal_detector.no_valuables": "No valuables found",
 
+  "block.legomod.purple_flower": "Ender Lilies",
   "block.legomod.azurite_block": "Azurit Block",
   "block.legomod.raw_azurite_block": "Azurit Raw Block",
   "block.legomod.azurite_ore": "Azurit Ore",

@@ -28,6 +28,8 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.AZURITE);
                         output.accept(ModItems.RAW_AZURITE);
+                        output.accept(ModItems.PURPLE_PETALS);
+                        output.accept(ModItems.METAL_DETECTOR);
                     })
                     .build());
 
@@ -42,6 +44,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.AZURITE_DEEPSLATE_ORE);
                         output.accept(ModBlocks.AZURITE_NETHER_ORE);
                         output.accept(ModBlocks.AZURITE_END_ORE);
+                        output.accept(ModBlocks.PURPLE_FLOWER);
                     })
                     .build());
 

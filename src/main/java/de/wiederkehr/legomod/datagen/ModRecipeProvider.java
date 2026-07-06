@@ -75,8 +75,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" B ")
                 .pattern("B B")
                 .pattern(" B ")
-                .define('B', Items.POPPY)
-                .unlockedBy(getHasName(Items.POPPY), has(Items.POPPY))
+                .define('B', ModItems.PURPLE_PETALS)
+                .unlockedBy(getHasName(ModItems.PURPLE_PETALS), has(ModItems.PURPLE_PETALS))
                 .save(output, "legomod:ender_pearl");
     }
 

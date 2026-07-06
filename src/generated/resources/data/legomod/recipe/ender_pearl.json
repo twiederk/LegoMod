@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": "minecraft:poppy"
+    "B": "legomod:purple_petals"
   },
   "pattern": [
     " B ",
