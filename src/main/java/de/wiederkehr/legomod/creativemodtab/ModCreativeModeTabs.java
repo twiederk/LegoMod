@@ -29,6 +29,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.AZURITE);
                         output.accept(ModItems.RAW_AZURITE);
                         output.accept(ModItems.PURPLE_PETALS);
+                        output.accept(ModItems.METAL_DETECTOR);
                     })
                     .build());
 
