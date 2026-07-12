@@ -14,6 +14,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -85,7 +86,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" S ")
                 .pattern(" XX")
                 .define('S', Items.STICK)
-                .define('X', Items.BRICK)
+                .define('X', Blocks.COBBLESTONE)
                 .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
                 .save(output);
     }

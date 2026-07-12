@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "S": "minecraft:stick",
-    "X": "minecraft:brick"
+    "X": "minecraft:cobblestone"
   },
   "pattern": [
     "S  ",
