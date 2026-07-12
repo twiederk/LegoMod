@@ -78,6 +78,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('B', ModItems.PURPLE_PETALS)
                 .unlockedBy(getHasName(ModItems.PURPLE_PETALS), has(ModItems.PURPLE_PETALS))
                 .save(output, "legomod:ender_pearl");
+
+        // Metaldetector Rezept
+        shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR)
+                .pattern("S  ")
+                .pattern(" S ")
+                .pattern(" XX")
+                .define('S', Items.STICK)
+                .define('X', Items.BRICK)
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(output);
     }
 
 
