@@ -36,7 +36,7 @@ public class MetalDetectorItem extends Item {
                 BlockState blockState = level.getBlockState(positionClicked.below(i));
 
                 if (isValuableBlock(blockState)) {
-                    outputValuableCoordinates(positionClicked.below(i), player, blockState.getBlock());
+                    outputValuableCoordinates(positionClicked, positionClicked.below(i), player, blockState.getBlock());
                     foundBlock = true;
 
                     // damage the item
@@ -74,10 +74,12 @@ public class MetalDetectorItem extends Item {
         player.sendSystemMessage(Component.translatable("item.legomod.metal_detector.no_valuables"));
     }
 
-    private void outputValuableCoordinates(BlockPos position, Player player, Block block) {
+    private void outputValuableCoordinates(BlockPos clickedBlockPos, BlockPos valuableBlockPos, Player player, Block valuableBlock) {
+        int blocksToDigDown = Math.max(0, clickedBlockPos.getY() - valuableBlockPos.getY());
         player.sendSystemMessage(Component.literal("Wertvolles gefunden: ")
-                .append(block.getName())
-                .append(Component.literal(" bei (" + position.getX() + "," + position.getY() + "," + position.getZ() + ")")));
+                .append(valuableBlock.getName())
+                .append(Component.literal(" bei (" + valuableBlockPos.getX() + "," + valuableBlockPos.getY() + "," + valuableBlockPos.getZ() + ")"))
+                .append(Component.literal(" - " + blocksToDigDown + " Blöcke nach unten graben")));
     }
 
     private boolean isValuableBlock(BlockState blockState) {
