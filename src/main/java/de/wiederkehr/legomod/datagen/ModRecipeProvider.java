@@ -14,6 +14,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -78,6 +79,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('B', ModItems.PURPLE_PETALS)
                 .unlockedBy(getHasName(ModItems.PURPLE_PETALS), has(ModItems.PURPLE_PETALS))
                 .save(output, "legomod:ender_pearl");
+
+        // Metaldetector Rezept
+        shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR)
+                .pattern("S  ")
+                .pattern(" S ")
+                .pattern(" XX")
+                .define('S', Items.STICK)
+                .define('X', Blocks.COBBLESTONE)
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(output);
     }
 
 
